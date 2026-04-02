@@ -163,11 +163,11 @@ Swagger UI: http://localhost:8000/docs (when backend is running)
   margin-bottom: 0;
 }
 
-# In "Header" inside App.jsx
-<!-- <div className="header-brand">
-    <img className="header-icon" src="/eatsplorer_icon_logo.png" alt="Eatsplorer Logo" />
-    <div>
-    <img className="header-logo" src="/eatsplorer_long_logo.png" alt="Eatsplorer Long Logo" />
-    <p className="header-sub">Legazpi City Dining Discovery</p>
-    </div>
-</div> -->
+## In "Header" inside App.jsx
+# <div className="header-brand">
+#    <img className="header-icon" src="/eatsplorer_icon_logo.png" alt="Eatsplorer Logo" />
+#    <div>
+#    <img className="header-logo" src="/eatsplorer_long_logo.png" alt="Eatsplorer Long Logo" />
+#    <p className="header-sub">Legazpi City Dining Discovery</p>
+#    </div>
+# </div>
