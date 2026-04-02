@@ -1,0 +1,154 @@
+/* ══════════════════════════════════════════
+   APP LAYOUT
+══════════════════════════════════════════ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  height: 68px;
+  background: var(--brand-dark);
+  color: var(--text-inv);
+  flex-shrink: 0;
+  border-bottom: 2px solid var(--brand-rust);
+  position: relative;
+  z-index: 10;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  height: 80px; /* Added a fixed height to the parent */
+}
+
+.header-icon {
+  display: block;
+  max-height: 75%; /* Now this knows to be 100% of 80px */
+  width: auto;
+}
+
+.header-logo {
+  height: 5vh; /* Swapped max-height: 100% for a fixed pixel value */
+  width: auto; 
+  object-fit: contain;
+  margin-bottom: 0;
+}
+
+.header-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--brand-amber);
+  line-height: 1.1;
+}
+
+.header-sub {
+  font-size: 11px;
+  color: #b08060;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.header-stats {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.header-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--brand-amber);
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #8a6a50;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-positive .stat-value { color: #4ecb82; }
+
+/* ── Main Split Layout ── */
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.panel {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-browser {
+  width: 420px;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+}
+
+.panel-chat {
+  flex: 1;
+  background: var(--bg-chat);
+}
+
+/* ── Mobile Tabs ── */
+.mobile-tabs {
+  display: none;
+  margin-left: auto;
+  gap: 4px;
+}
+
+.mobile-tab {
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: #a08060;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.mobile-tab.active {
+  background: var(--brand-rust);
+  border-color: var(--brand-rust);
+  color: white;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .app-header { gap: 12px; padding: 0 16px; }
+  .header-stats { display: none; }
+  .mobile-tabs { display: flex; }
+  .app-main { position: relative; }
+  .panel { position: absolute; inset: 0; }
+  .mobile-hidden { display: none; }
+  .mobile-visible { display: flex; }
+  .panel-browser { width: 100%; border-right: none; }
+}

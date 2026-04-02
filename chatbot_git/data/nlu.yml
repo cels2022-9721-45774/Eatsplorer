@@ -1,0 +1,373 @@
+version: "3.1"
+
+nlu:
+  # ─────────────────────────────────────────────
+  # BASIC INTENTS
+  # ─────────────────────────────────────────────
+  - intent: greet
+    examples: |
+      - hi
+      - hello
+      - hey
+      - good morning
+      - good afternoon
+      - good evening
+      - hey there
+      - hi eatsplorer
+      - hello eatsplorer
+      - hi there
+      - howdy
+      - what's up
+      - sup
+      - greetings
+      - yo
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you
+      - see ya
+      - take care
+      - later
+      - good night
+      - thanks bye
+      - thank you bye
+      - that's all
+      - i'm done
+      - nothing else
+      - that will be all
+      - thanks, goodbye
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a robot?
+      - are you human?
+      - am I talking to a real person?
+      - are you AI?
+      - what are you?
+      - who are you?
+      - what is eatsplorer?
+      - tell me about yourself
+      - who made you?
+      - what can you do?
+      - how do you work?
+      - are you ChatGPT?
+      - are you powered by AI?
+
+  - intent: affirm
+    examples: |
+      - yes
+      - yeah
+      - yep
+      - sure
+      - of course
+      - definitely
+      - absolutely
+      - correct
+      - that's right
+      - yes please
+      - go ahead
+      - ok
+      - okay
+
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - nah
+      - not really
+      - no thanks
+      - never mind
+      - don't bother
+      - no need
+      - not interested
+      - skip it
+
+  - intent: ask_what_can_you_do
+    examples: |
+      - what can you do?
+      - how can you help me?
+      - what are your features?
+      - help me
+      - help
+      - what do you offer?
+      - what kind of questions can I ask?
+      - how do I use this?
+      - what is this chatbot for?
+      - show me what you can do
+      - give me examples
+      - how does this work?
+      - what questions can I ask?
+
+  # ─────────────────────────────────────────────
+  # RESTAURANT RECOMMENDATION INTENTS
+  # ─────────────────────────────────────────────
+
+  - intent: ask_top_restaurants
+    examples: |
+      - what are the top restaurants in legazpi?
+      - best restaurants in legazpi city
+      - recommend some restaurants
+      - give me restaurant recommendations
+      - where should I eat in legazpi?
+      - what restaurants do you recommend?
+      - top dining spots in legazpi
+      - best places to eat
+      - suggest a restaurant
+      - where can I eat?
+      - best food in legazpi
+      - top rated restaurants
+      - highly recommended restaurants
+      - most popular restaurants in legazpi city
+      - what's good to eat here in legazpi?
+      - where to dine in legazpi city?
+      - what are the must try restaurants?
+      - best restaurants near legazpi
+      - any good restaurant recommendations?
+      - top restaurants legazpi
+
+  - intent: ask_best_overall
+    examples: |
+      - what is the highest rated restaurant?
+      - which restaurant has the best overall score?
+      - what is the number one restaurant in legazpi?
+      - best overall restaurant
+      - top rated restaurant overall
+      - what restaurant scores the highest?
+      - restaurant with the highest rating
+      - which restaurant is the best?
+      - number one dining spot
+      - the absolute best restaurant in legazpi city
+
+  # ─────────────────────────────────────────────
+  # ASPECT-BASED INTENTS
+  # ─────────────────────────────────────────────
+
+  - intent: ask_restaurant_by_aspect
+    examples: |
+      - restaurants with great [food quality](aspect)
+      - places with excellent [food](aspect)
+      - best [food quality](aspect) restaurants
+      - restaurants known for good [food](aspect)
+      - where can I get amazing [food quality](aspect)?
+      - restaurants with great [service](aspect)
+      - places with excellent [service](aspect)
+      - best [service](aspect) in legazpi
+      - restaurants known for good [service](aspect)
+      - where do they treat customers well? [service](aspect)
+      - restaurants with nice [ambiance](aspect)
+      - places with good [atmosphere](aspect)
+      - best [ambiance](aspect) restaurants
+      - restaurants with good [vibe](aspect)
+      - nice [ambiance](aspect) restaurants in legazpi
+      - restaurants with good [price](aspect)
+      - best [value for money](aspect) restaurants
+      - affordable restaurants with good [price-to-value](aspect)
+      - where can I eat without breaking the bank [price value](aspect)
+      - best [price value](aspect) in legazpi
+      - restaurants with great [value](aspect)
+      - places good for [food quality](aspect) and [service](aspect)
+      - where is the [food](aspect) delicious?
+      - restaurants with high [food quality](aspect) ratings
+      - good [service](aspect) restaurants in legazpi city
+      - which places have cozy [ambiance](aspect)?
+      - restaurants famous for their [food](aspect)
+      - recommend based on [ambiance](aspect)
+      - which restaurants are best for [food quality](aspect)?
+      - restaurants with excellent [price value](aspect)
+
+  - intent: ask_top_n_by_aspect
+    examples: |
+      - top [5](number) restaurants with best [food quality](aspect)
+      - give me [3](number) restaurants with great [service](aspect)
+      - [10](number) best [ambiance](aspect) restaurants
+      - top [5](number) [food quality](aspect) restaurants
+      - show me [3](number) restaurants with good [value](aspect)
+      - best [5](number) places for [food](aspect)
+      - [5](number) restaurants with nice [ambiance](aspect)
+      - top [3](number) restaurants for [service](aspect)
+      - list [5](number) restaurants with the best [food quality](aspect)
+      - give me the top [3](number) places for [price value](aspect)
+      - top [10](number) restaurants for [food quality](aspect)
+      - best [5](number) restaurants with excellent [service](aspect)
+      - [3](number) restaurants good for [ambiance](aspect)
+      - top [5](number) overall restaurants
+      - top [3](number) best restaurants
+      - give me [5](number) restaurant recommendations
+      - [10](number) top rated restaurants in legazpi
+      - list the top [5](number) restaurants
+      - what are the top [3](number) restaurants?
+      - give me [3](number) restaurant recommendations
+
+  - intent: ask_multi_aspect
+    examples: |
+      - restaurants with great [food quality](aspect) and good [service](aspect)
+      - places with nice [ambiance](aspect) and good [food](aspect)
+      - restaurants good in both [food quality](aspect) and [price value](aspect)
+      - where can I find good [food](aspect) with great [ambiance](aspect)?
+      - restaurants with excellent [service](aspect) and [ambiance](aspect)
+      - best restaurants for [food quality](aspect) [service](aspect) and [ambiance](aspect)
+      - places with good [price value](aspect) and [food quality](aspect)
+      - restaurants that have both great [food](aspect) and nice [ambiance](aspect)
+      - where is the [service](aspect) and [food quality](aspect) both excellent?
+      - restaurants good for [ambiance](aspect) and [price value](aspect)
+      - best of [food quality](aspect) and [service](aspect)
+      - good [food quality](aspect) great [ambiance](aspect) restaurant
+      - I want good [food](aspect) and also great [service](aspect)
+      - restaurants with top [food quality](aspect) and [service](aspect)
+      - best in [food](aspect) and [value](aspect)
+
+  - intent: ask_positive_only
+    examples: |
+      - restaurants that are [positively](polarity) reviewed
+      - only [positive](polarity) restaurants
+      - restaurants with [positive](polarity) feedback
+      - show me restaurants with [positive](polarity) reviews
+      - which restaurants have [positive](polarity) ratings?
+      - restaurants that customers love
+      - restaurants with [positive](polarity) overall sentiment
+      - highly [positive](polarity) restaurants
+      - restaurants that are well received
+      - give me only [positive](polarity) restaurants
+
+  - intent: ask_negative_warning
+    examples: |
+      - which restaurants have [negative](polarity) reviews?
+      - restaurants with bad reviews
+      - places with [negative](polarity) feedback
+      - restaurants to avoid
+      - worst restaurants in legazpi
+      - restaurants with [negative](polarity) sentiment
+      - which places have bad [service](aspect)?
+      - restaurants with poor [food quality](aspect)
+      - which restaurants have [negative](polarity) food quality?
+      - places with bad [ambiance](aspect)
+
+  # ─────────────────────────────────────────────
+  # RESTAURANT INFO INTENT
+  # ─────────────────────────────────────────────
+
+  - intent: ask_restaurant_info
+    examples: |
+      - tell me about [Brew Print Cafe](restaurant_name)
+      - what are the scores for [Carbon Cafe](restaurant_name)?
+      - how is [Pablo's](restaurant_name)?
+      - give me details about [Rafabel's Café and Patisserie](restaurant_name)
+      - what do customers say about [Tiny Cafe](restaurant_name)?
+      - how does [Ponce's Café](restaurant_name) score?
+      - tell me about [Zio Mario Cafe](restaurant_name)
+      - info on [Mr. HeBrews Cafe](restaurant_name)
+      - what is the rating of [Shot Tea Cafe Ph](restaurant_name)?
+      - how good is [Taragay-Z](restaurant_name)?
+      - give me a breakdown of [STEAK ESCAPE](restaurant_name)
+      - review summary for [Burugtian](restaurant_name)
+      - what about [Caffé Kat](restaurant_name)?
+      - tell me more about [Pod1um Restobar](restaurant_name)
+      - information on [Cafe Pia](restaurant_name)
+      - how is the food at [Pablo's](restaurant_name)?
+      - is [Carbon Cafe](restaurant_name) good?
+      - what is [Brew Print Cafe](restaurant_name) like?
+      - what's the rating of [Quinn Maye Lomi House](restaurant_name)?
+      - details on [Si Bening Eleven](restaurant_name)
+      - what are people saying about [Anti Gutom Snackstop](restaurant_name)?
+      - tell me about [Borsigue Food House](restaurant_name)
+      - how does [Migoy's Burger Albay](restaurant_name) rate?
+      - what about [Salbaheng Siram - Lechon Belly House](restaurant_name)?
+      - can you tell me about [SUGBA'T SABAW](restaurant_name)?
+      - info about this restaurant [Sebastian's Sizzling House - University Homes](restaurant_name)
+
+  - intent: out_of_scope
+    examples: |
+      - what is the weather today?
+      - can you book a table for me?
+      - I want to make a reservation
+      - what time does it open?
+      - can you order food for me?
+      - do they deliver?
+      - what is the menu?
+      - how much does it cost exactly?
+      - tell me a joke
+      - what movies are showing?
+      - give me directions
+      - how do I get to legazpi?
+      - what are the tourist spots in legazpi?
+      - book me a hotel
+      - translate this for me
+      - what's the news today?
+
+  # ─────────────────────────────────────────────
+  # LOOKUP TABLES (for EntitySynonymMapper)
+  # ─────────────────────────────────────────────
+
+  - lookup: aspect
+    examples: |
+      - food quality
+      - food
+      - cuisine
+      - dishes
+      - taste
+      - flavors
+      - service
+      - staff
+      - customer service
+      - hospitality
+      - waiters
+      - ambiance
+      - atmosphere
+      - vibe
+      - decor
+      - environment
+      - price value
+      - price-to-value
+      - value for money
+      - value
+      - price
+      - affordability
+      - budget
+
+  # ─────────────────────────────────────────────
+  # SYNONYM MAPPINGS
+  # ─────────────────────────────────────────────
+
+  - synonym: food_quality
+    examples: |
+      - food quality
+      - food
+      - cuisine
+      - dishes
+      - taste
+      - flavors
+      - the food
+
+  - synonym: service
+    examples: |
+      - service
+      - staff
+      - customer service
+      - hospitality
+      - waiters
+      - waiter
+      - servers
+
+  - synonym: ambiance
+    examples: |
+      - ambiance
+      - atmosphere
+      - vibe
+      - decor
+      - environment
+      - setting
+      - place
+
+  - synonym: price_value
+    examples: |
+      - price value
+      - price-to-value
+      - value for money
+      - value
+      - price
+      - affordability
+      - budget
+      - cost

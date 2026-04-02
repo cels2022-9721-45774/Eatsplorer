@@ -1,0 +1,6 @@
+[
+  {
+    "name": "aspect",
+    "pattern": "(\\bfood\\ quality\\b|\\bfood\\b|\\bcuisine\\b|\\bdishes\\b|\\btaste\\b|\\bflavors\\b|\\bservice\\b|\\bstaff\\b|\\bcustomer\\ service\\b|\\bhospitality\\b|\\bwaiters\\b|\\bambiance\\b|\\batmosphere\\b|\\bvibe\\b|\\bdecor\\b|\\benvironment\\b|\\bprice\\ value\\b|\\bprice\\-to\\-value\\b|\\bvalue\\ for\\ money\\b|\\bvalue\\b|\\bprice\\b|\\baffordability\\b|\\bbudget\\b)"
+  }
+]

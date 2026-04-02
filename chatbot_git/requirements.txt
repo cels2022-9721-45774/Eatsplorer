@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────────────────────────
+# Eatsplorer Chatbot — Windows requirements
+# Python 3.10 required (not 3.11+)
+# Install: python3.10 -m venv venv_chatbot
+#          venv_chatbot\Scripts\activate
+#          pip install -r chatbot\requirements.txt
+# ─────────────────────────────────────────────────────────────
+
+# Core RASA
+rasa==3.6.20
+rasa-sdk==3.6.2
+
+# TensorFlow for Windows — tensorflow-text has no Windows wheel
+# for 2.11+ so it is intentionally excluded here
+tensorflow==2.12.0
+tensorflow-io-gcs-filesystem==0.31.0
+
+# TensorFlow Hub
+tensorflow_hub==0.13.0
+
+# Numeric stack — ranges required by RASA 3.6 on Python 3.10
+numpy>=1.19.2,<1.25.0
+scikit-learn>=1.0.0,<1.2.0
+scipy>=1.10.0,<1.11.0
+
+# Pydantic v1 — RASA 3.6 is NOT compatible with pydantic v2
+pydantic>=1.9.2,<1.10.10
+
+# Data
+pandas>=1.3.5,<2.0.0

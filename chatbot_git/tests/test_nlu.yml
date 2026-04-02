@@ -1,0 +1,142 @@
+version: "3.1"
+
+# ─────────────────────────────────────────────────────────────
+# NLU Test Data for Eatsplorer
+# Run with: rasa test nlu --nlu tests/test_nlu.yml
+# Generates: accuracy, precision, recall, F1-score, confusion matrix
+# ─────────────────────────────────────────────────────────────
+
+nlu:
+  # ── greet ──────────────────────────────────────────────────
+  - intent: greet
+    examples: |
+      - hello there
+      - hi eatsplorer
+      - good day
+      - hey what's up
+      - morning
+      - good afternoon eatsplorer
+      - hey bot
+      - hi!
+
+  # ── goodbye ────────────────────────────────────────────────
+  - intent: goodbye
+    examples: |
+      - see you later
+      - that's all for now
+      - goodbye, thanks
+      - bye bye
+      - I'm done, thanks
+      - good night
+      - i'm leaving now
+      - thanks, bye!
+
+  # ── bot_challenge ──────────────────────────────────────────
+  - intent: bot_challenge
+    examples: |
+      - are you really a bot?
+      - is this AI?
+      - you're a chatbot right?
+      - who built you?
+      - what kind of AI are you?
+      - are you an AI assistant?
+
+  # ── ask_what_can_you_do ────────────────────────────────────
+  - intent: ask_what_can_you_do
+    examples: |
+      - what can I ask you?
+      - how do I use this?
+      - what are you for?
+      - show me what you do
+      - what are your capabilities?
+      - how can you help me find a restaurant?
+
+  # ── ask_top_restaurants ────────────────────────────────────
+  - intent: ask_top_restaurants
+    examples: |
+      - where's the best place to eat in legazpi?
+      - give me restaurant suggestions
+      - top food places in legazpi city
+      - what dining spots do you recommend?
+      - best places to dine in legazpi
+      - suggest somewhere to eat in legazpi
+      - what are some good restaurants?
+
+  # ── ask_best_overall ───────────────────────────────────────
+  - intent: ask_best_overall
+    examples: |
+      - what's the number one restaurant?
+      - top restaurant overall
+      - best restaurant with highest rating
+      - which restaurant has the best score?
+      - the best dining spot in legazpi
+
+  # ── ask_restaurant_by_aspect ───────────────────────────────
+  - intent: ask_restaurant_by_aspect
+    examples: |
+      - restaurants that excel in [food quality](aspect)
+      - places praised for their [service](aspect)
+      - where can I find good [ambiance](aspect)?
+      - best [price value](aspect) restaurants
+      - which restaurants are best for [food](aspect)?
+      - places known for great [service](aspect) in legazpi
+      - restaurants with outstanding [ambiance](aspect)
+      - good [value for money](aspect) restaurants
+
+  # ── ask_top_n_by_aspect ────────────────────────────────────
+  - intent: ask_top_n_by_aspect
+    examples: |
+      - give me [5](number) restaurants with great [food quality](aspect)
+      - top [3](number) restaurants for [ambiance](aspect)
+      - best [10](number) restaurants by [service](aspect)
+      - show [5](number) restaurants with best [value](aspect)
+      - top [3](number) restaurants overall
+      - list [5](number) best restaurants
+
+  # ── ask_multi_aspect ───────────────────────────────────────
+  - intent: ask_multi_aspect
+    examples: |
+      - restaurants with great [food](aspect) and [service](aspect)
+      - where's good for [ambiance](aspect) and [value](aspect)?
+      - places with good [food quality](aspect) and [ambiance](aspect)
+      - restaurants strong in [service](aspect) and [price value](aspect)
+
+  # ── ask_restaurant_info ────────────────────────────────────
+  - intent: ask_restaurant_info
+    examples: |
+      - what's [Carbon Cafe](restaurant_name) rated?
+      - tell me everything about [Brew Print Cafe](restaurant_name)
+      - how good is [Pablo's](restaurant_name)?
+      - details on [Ponce's Café](restaurant_name)
+      - give me a review summary for [Tiny Cafe](restaurant_name)
+      - what do people say about [Zio Mario Cafe](restaurant_name)?
+      - how does [Mr. HeBrews Cafe](restaurant_name) score in food?
+
+  # ── ask_positive_only ──────────────────────────────────────
+  - intent: ask_positive_only
+    examples: |
+      - show only well-reviewed restaurants
+      - restaurants with [positive](polarity) sentiment
+      - only [positive](polarity) feedback places
+      - restaurants customers love
+      - highly rated and [positive](polarity) restaurants
+
+  # ── ask_negative_warning ───────────────────────────────────
+  - intent: ask_negative_warning
+    examples: |
+      - which restaurants should I avoid?
+      - places with [negative](polarity) reviews
+      - restaurants with bad feedback
+      - worst restaurants in legazpi
+      - restaurants customers don't recommend
+
+  # ── out_of_scope ───────────────────────────────────────────
+  - intent: out_of_scope
+    examples: |
+      - book a table for 4
+      - what time do they open?
+      - can you order for me?
+      - do they do delivery?
+      - translate to Filipino
+      - what's the weather?
+      - tourist spots in legazpi

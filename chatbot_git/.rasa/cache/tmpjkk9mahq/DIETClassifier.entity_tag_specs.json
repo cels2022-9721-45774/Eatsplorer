@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-aspect",
+      "2": "I-aspect",
+      "3": "L-aspect",
+      "4": "U-aspect",
+      "5": "B-number",
+      "6": "I-number",
+      "7": "L-number",
+      "8": "U-number",
+      "9": "B-polarity",
+      "10": "I-polarity",
+      "11": "L-polarity",
+      "12": "U-polarity",
+      "13": "B-restaurant_name",
+      "14": "I-restaurant_name",
+      "15": "L-restaurant_name",
+      "16": "U-restaurant_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-aspect": 1,
+      "I-aspect": 2,
+      "L-aspect": 3,
+      "U-aspect": 4,
+      "B-number": 5,
+      "I-number": 6,
+      "L-number": 7,
+      "U-number": 8,
+      "B-polarity": 9,
+      "I-polarity": 10,
+      "L-polarity": 11,
+      "U-polarity": 12,
+      "B-restaurant_name": 13,
+      "I-restaurant_name": 14,
+      "L-restaurant_name": 15,
+      "U-restaurant_name": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

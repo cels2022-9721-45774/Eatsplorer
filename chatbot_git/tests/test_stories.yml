@@ -1,0 +1,131 @@
+version: "3.1"
+
+# ─────────────────────────────────────────────
+# E2E Test Stories for Eatsplorer
+# Used with: rasa test --stories tests/test_stories.yml
+# ─────────────────────────────────────────────
+
+stories:
+  - story: test greet flow
+    steps:
+      - user: "hi"
+        intent: greet
+      - action: utter_greet
+
+  - story: test goodbye flow
+    steps:
+      - user: "bye"
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: test bot challenge
+    steps:
+      - user: "are you a bot?"
+        intent: bot_challenge
+      - action: utter_iamabot
+
+  - story: test top restaurants
+    steps:
+      - user: "what are the best restaurants in legazpi?"
+        intent: ask_top_restaurants
+      - action: action_recommend_top_restaurants
+
+  - story: test best overall
+    steps:
+      - user: "what is the highest rated restaurant?"
+        intent: ask_best_overall
+      - action: action_best_overall
+
+  - story: test by aspect food quality
+    steps:
+      - user: "restaurants with great food quality"
+        intent: ask_restaurant_by_aspect
+        entities:
+          - aspect: food_quality
+      - slot_was_set:
+          - aspect: food_quality
+      - action: action_restaurant_by_aspect
+
+  - story: test by aspect service
+    steps:
+      - user: "restaurants with great service"
+        intent: ask_restaurant_by_aspect
+        entities:
+          - aspect: service
+      - slot_was_set:
+          - aspect: service
+      - action: action_restaurant_by_aspect
+
+  - story: test by aspect ambiance
+    steps:
+      - user: "best ambiance restaurants"
+        intent: ask_restaurant_by_aspect
+        entities:
+          - aspect: ambiance
+      - slot_was_set:
+          - aspect: ambiance
+      - action: action_restaurant_by_aspect
+
+  - story: test top n by aspect
+    steps:
+      - user: "top 5 restaurants with best food quality"
+        intent: ask_top_n_by_aspect
+        entities:
+          - number: 5
+          - aspect: food_quality
+      - action: action_top_n_by_aspect
+
+  - story: test multi aspect
+    steps:
+      - user: "restaurants with great food quality and good service"
+        intent: ask_multi_aspect
+        entities:
+          - aspect: food_quality
+          - aspect: service
+      - action: action_multi_aspect
+
+  - story: test restaurant info
+    steps:
+      - user: "tell me about Brew Print Cafe"
+        intent: ask_restaurant_info
+        entities:
+          - restaurant_name: Brew Print Cafe
+      - action: action_restaurant_info
+
+  - story: test out of scope
+    steps:
+      - user: "can you book a table for me?"
+        intent: out_of_scope
+      - action: utter_out_of_scope
+
+  - story: test positive only
+    steps:
+      - user: "restaurants with positive reviews"
+        intent: ask_positive_only
+      - action: action_positive_only
+
+  - story: test what can you do
+    steps:
+      - user: "what can you do?"
+        intent: ask_what_can_you_do
+      - action: utter_what_can_you_do
+
+  - story: test full conversation flow
+    steps:
+      - user: "hello"
+        intent: greet
+      - action: utter_greet
+      - user: "top 3 restaurants with best food"
+        intent: ask_top_n_by_aspect
+        entities:
+          - number: 3
+          - aspect: food_quality
+      - action: action_top_n_by_aspect
+      - user: "tell me about Brew Print Cafe"
+        intent: ask_restaurant_info
+        entities:
+          - restaurant_name: Brew Print Cafe
+      - action: action_restaurant_info
+      - user: "bye"
+        intent: goodbye
+      - action: utter_goodbye
