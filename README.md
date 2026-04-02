@@ -142,7 +142,6 @@ Swagger UI: http://localhost:8000/docs (when backend is running)
 ## CHANGES MADE TO UI
 
 # In App.css
-'''text
 .header-brand {
   display: flex;
   align-items: center;
@@ -165,11 +164,5 @@ Swagger UI: http://localhost:8000/docs (when backend is running)
 }
 
 ## In "Header" inside App.jsx
-'''text
-<div className="header-brand">
-  <img className="header-icon" src="/eatsplorer_icon_logo.png" alt="Eatsplorer Logo" />
-  <div>
-    <img className="header-logo" src="/eatsplorer_long_logo.png" alt="Eatsplorer Long Logo" />
-    <p className="header-sub">Legazpi City Dining Discovery</p>
-  </div>
-</div>
+<img width="913" height="227" alt="image" src="https://github.com/user-attachments/assets/5b2d9581-a19f-42d1-8796-2081a68f2d78" />
+
